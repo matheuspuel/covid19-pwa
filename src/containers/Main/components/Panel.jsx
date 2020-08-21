@@ -19,15 +19,15 @@ function Panel({ updatedAt, country, data, changeCountry }) {
 
   const shareInfo = () => {
     navigator.share({
-      title: `Dados do Covid-19 - ${country}`,
+      title: `Dados do Covid-19 - ${data.country}`,
       text: infoText,
-      url: 'localhost:8000'
+      url: 'https://covid19-counter.netlify.app/'
     })
   }
 
   const ShareButton = (
     <div>
-      <Button onclick={shareInfo}>
+      <Button onClick={shareInfo}>
         Compartilhar
       </Button>
     </div>
@@ -44,7 +44,7 @@ function Panel({ updatedAt, country, data, changeCountry }) {
   return (
     <Card>
       <div>
-        <h1>COVID 19</h1>
+        <h1>COVID-19</h1>
         <h2>Painel Coronavírus</h2>
         {navigatorHasShare ? ShareButton : CopyButton}
         <p>Atualizado em: {updatedAt}</p>
