@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import Api from '../../resources/api'
 import { Button } from '../../components'
-import Board from "./components/Board";
+import { Board, Panel } from "./components";
 
 function Main(){
   const [country, setCountry] = useState('brazil')
@@ -14,6 +14,7 @@ function Main(){
 
   return (
     <div>
+      <Panel setCountry={setCountry}></Panel>
       <Board data={data}/>
     </div>
   )
