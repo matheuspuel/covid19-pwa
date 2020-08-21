@@ -1,8 +1,8 @@
 import React from "react";
 
-function Card({ label, value, color }){
+function Card({ label, value, color, children }){
   const style = {
-    color: 'white',
+    color: color || 'white',
     padding: '0 20px',
   }
 
@@ -10,6 +10,7 @@ function Card({ label, value, color }){
     <div style={style}>
       <h2>{label}</h2>
       <p>{value}</p>
+      {children}
     </div>
   )
 }
