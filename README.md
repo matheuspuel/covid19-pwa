@@ -4,4 +4,4 @@ Progressive Web App developed for learning purposes based on the project [covid1
 
 The app keeps track of the numbers related to the covid-19 disease using the [covidAPI](https://coronavirus-19-api.herokuapp.com/) of [Javier Aviles](https://github.com/javieraviles).
 
-Check the result hosted on [https://github.com/javieraviles](https://github.com/javieraviles).
+Check the result hosted on [https://covid19-counter.netlify.app/](https://covid19-counter.netlify.app/).
