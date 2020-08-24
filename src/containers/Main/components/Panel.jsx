@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardContent, Typography } from "@material-ui/core";
 import { Select, MenuItem, Button} from '../../../components'
-import COUNTRIES from "../../../commons/constants/countries";
+import COUNTRIES from "commons/constants/countries";
 
 const navigatorHasShare = navigator.share
 
