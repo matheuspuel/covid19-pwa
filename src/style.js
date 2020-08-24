@@ -4,7 +4,7 @@ import Background from 'assets/images/covid.jpg';
 
 export const DivBackgroundStyled = styled.div`
   background-image: url(${Background});
-  background=position: center;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
