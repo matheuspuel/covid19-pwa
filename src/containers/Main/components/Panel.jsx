@@ -1,5 +1,5 @@
 import React from "react";
-import { CardContent, Typography } from "@material-ui/core";
+import {CardContent, Typography} from "@material-ui/core";
 import { Select, MenuItem, Button} from 'components'
 import { MenuItemDivStyled, CardPanelStyled } from "../style";
 import COUNTRIES from "commons/constants/countries";
@@ -23,19 +23,15 @@ function Panel({ updatedAt, country, data, changeCountry }) {
   }
 
   const ShareButton = (
-    <div>
-      <Button onClick={shareInfo}>
-        Compartilhar
-      </Button>
-    </div>
+    <Button onClick={shareInfo}>
+      Compartilhar
+    </Button>
   )
 
   const CopyButton = (
-    <div>
-      <Button onClick={copyInfo}>
-        Copiar
-      </Button>
-    </div>
+    <Button onClick={copyInfo}>
+      Copiar
+    </Button>
   )
 
   const renderCountries = ({label, value, flag}) => {
@@ -51,22 +47,26 @@ function Panel({ updatedAt, country, data, changeCountry }) {
 
   return (
     <CardPanelStyled>
-      <CardContent>
-        <Typography variant="h3" color="primary">
-          COVID-19
-        </Typography>
-        <Typography variant="h5">
-          Painel Coronavírus
-        </Typography>
+      <CardContent style={{width: '100%'}}>
+        <div style={{overflow: "hidden" }}>
+          <div style={{display:"inline-block"}}>
+            <Typography variant="h4" color="primary">
+              COVID-19
+            </Typography>
+            <Typography variant="h6">
+              Painel Coronavírus
+            </Typography>
+          </div>
+          <div style={{float:'right'}}>
+            {navigatorHasShare ? ShareButton : CopyButton}
+          </div>
+        </div>
         <Typography variant="body2" color="textSecondary">
           Atualizado em: {updatedAt}
         </Typography>
         <Select onChange={changeCountry} value={country}>
           {COUNTRIES.map(renderCountries)}
         </Select>
-      </CardContent>
-      <CardContent>
-        {navigatorHasShare ? ShareButton : CopyButton}
       </CardContent>
     </CardPanelStyled>
   )

@@ -13,6 +13,6 @@ export const MenuItemDivStyled = styled.div`
     min-width: 150px;
 `
 
-export const CardContentStyled = styled(CardContent)`
+export const CardContentDataStyled = styled(CardContent)`
     border-left: 8px solid ${({ color }) => color || "black"};
 `
