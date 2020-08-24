@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
-import { Card } from '../components'
+import { Card } from './'
 
 function Board({ data }){
   const { cases, todayDeaths, recovered, deaths, todayCases } = data;

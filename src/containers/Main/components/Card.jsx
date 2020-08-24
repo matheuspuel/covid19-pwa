@@ -1,24 +1,21 @@
 import React from "react";
-import { Card } from "../../../components"
-import { CardContent, Typography } from "@material-ui/core";
-import { numberFormat } from "../../../commons/utils/number";
+import { Card } from "components"
+import { Typography } from "@material-ui/core";
+import { CardContentStyled } from "../style";
+import { numberFormat } from "commons/utils/number";
 
-function CustomCard({ label, value, color, children }){
-  const cardStyle = {
-    borderLeft: `8px solid ${color || "black"}`,
-  }
+function CustomCard({ label, value, color }){
 
   return (
     <Card>
-      <CardContent style={cardStyle}>
+      <CardContentStyled color={color}>
         <Typography variant="h4">
           {numberFormat(value)}
         </Typography>
         <Typography variant="subtitle1" color="textSecondary">
           {label}
         </Typography>
-      </CardContent>
-      {children}
+      </CardContentStyled>
     </Card>
   )
 }

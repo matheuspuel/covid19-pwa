@@ -1,6 +1,7 @@
 import React from "react";
-import { Card, CardContent, Typography } from "@material-ui/core";
-import { Select, MenuItem, Button} from '../../../components'
+import { CardContent, Typography } from "@material-ui/core";
+import { Select, MenuItem, Button} from 'components'
+import { MenuItemDivStyled, CardPanelStyled } from "../style";
 import COUNTRIES from "commons/constants/countries";
 
 const navigatorHasShare = navigator.share
@@ -37,30 +38,19 @@ function Panel({ updatedAt, country, data, changeCountry }) {
     </div>
   )
 
-  const itemStyle = {
-    display: 'flex',
-    minWidth: '150px',
-  }
-
   const renderCountries = ({label, value, flag}) => {
     return (
       <MenuItem key={value} value={value}>
-        <div style={itemStyle}>
+        <MenuItemDivStyled>
           <img src={flag} alt={`País-${label}`} style={{marginRight:'10px'}}/>
           <div>{label}</div>
-        </div>
+        </MenuItemDivStyled>
       </MenuItem>
     )
   }
 
-  const style = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    padding: '8px',
-  }
-
   return (
-    <Card style={style}>
+    <CardPanelStyled>
       <CardContent>
         <Typography variant="h3" color="primary">
           COVID-19
@@ -78,7 +68,7 @@ function Panel({ updatedAt, country, data, changeCountry }) {
       <CardContent>
         {navigatorHasShare ? ShareButton : CopyButton}
       </CardContent>
-    </Card>
+    </CardPanelStyled>
   )
 }
 

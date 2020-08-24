@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import Api from '../../resources/api'
+import Api from 'resources/api'
 import { Board, Panel } from "./components";
 import {Grid} from "@material-ui/core";
 
@@ -17,14 +17,8 @@ function Main(){
     setCountry(target.value)
   }
 
-  const divStyle = {
-    margin: "0 auto",
-    maxWidth: '1024px',
-    width: "100%",
-  }
-
   return (
-    <Grid container spacing={4} style={divStyle}>
+    <Grid container spacing={4}>
       <Grid item xs={12}>
         <Panel changeCountry={changeCountry} country={country} data={data} updatedAt={updatedAt}/>
       </Grid>
