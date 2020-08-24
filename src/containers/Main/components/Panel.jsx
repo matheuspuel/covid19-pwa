@@ -7,12 +7,6 @@ const navigatorHasShare = navigator.share
 
 function Panel({ updatedAt, country, data, changeCountry }) {
 
-  const renderCountries = ({label, value, flag}) => {
-    return (
-      <MenuItem key={value} value={value}>{label}</MenuItem>
-    )
-  }
-
   const infoText = `País: ${data.country}, total de óbitos: ${data.deaths}`
 
   const copyInfo = () => {
@@ -42,6 +36,22 @@ function Panel({ updatedAt, country, data, changeCountry }) {
       </Button>
     </div>
   )
+
+  const itemStyle = {
+    display: 'flex',
+    minWidth: '150px',
+  }
+
+  const renderCountries = ({label, value, flag}) => {
+    return (
+      <MenuItem key={value} value={value}>
+        <div style={itemStyle}>
+          <img src={flag} alt={`País-${label}`} style={{marginRight:'10px'}}/>
+          <div>{label}</div>
+        </div>
+      </MenuItem>
+    )
+  }
 
   const style = {
     display: 'flex',

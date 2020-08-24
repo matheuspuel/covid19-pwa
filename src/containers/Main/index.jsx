@@ -20,6 +20,7 @@ function Main(){
   const divStyle = {
     margin: "0 auto",
     maxWidth: '1024px',
+    width: "100%",
   }
 
   return (

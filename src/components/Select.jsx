@@ -1,11 +1,4 @@
-import React from "react";
+import { Select } from "@material-ui/core";
 
-function Select({ onChange, value, children }){
-  return (
-    <select onChange={onChange} value={value}>
-      {children}
-    </select>
-  )
-}
 
 export default Select;

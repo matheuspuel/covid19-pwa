@@ -1,11 +1,4 @@
-import React from "react";
+import { MenuItem } from "@material-ui/core";
 
-function MenuItem({ value, children }){
-  return (
-    <option value={value}>
-      {children}
-    </option>
-  )
-}
 
 export default MenuItem;
