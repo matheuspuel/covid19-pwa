@@ -1,18 +1,12 @@
 import React from "react";
+import { Card } from "@material-ui/core";
 
-function Card({ label, value, color, children }){
-  const style = {
-    color: color || 'white',
-    padding: '0 20px',
-  }
-
+function CustomCard({ children }){
   return (
-    <div style={style}>
-      <h2>{label}</h2>
-      <p>{value}</p>
+    <Card>
       {children}
-    </div>
+    </Card>
   )
 }
 
-export default Card
+export default CustomCard

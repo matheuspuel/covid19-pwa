@@ -1,9 +1,10 @@
 import React from "react";
+import { Button } from "@material-ui/core"
 
-function Button({ onClick, children }){
+function CustomButton({ onClick, children }){
   return (
-    <button onClick={onClick}>{children}</button>
+    <Button onClick={onClick} variant="contained" color="primary">{children}</Button>
   )
 }
 
-export default Button
+export default CustomButton

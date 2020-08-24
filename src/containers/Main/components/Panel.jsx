@@ -1,10 +1,12 @@
 import React from "react";
-import {Card, Select, MenuItem, Button} from '../../../components'
+import { Card, CardContent, Typography } from "@material-ui/core";
+import { Select, MenuItem, Button} from '../../../components'
 import COUNTRIES from "../../../commons/constants/countries";
 
 const navigatorHasShare = navigator.share
 
 function Panel({ updatedAt, country, data, changeCountry }) {
+
   const renderCountries = ({label, value, flag}) => {
     return (
       <MenuItem key={value} value={value}>{label}</MenuItem>
@@ -41,17 +43,31 @@ function Panel({ updatedAt, country, data, changeCountry }) {
     </div>
   )
 
+  const style = {
+    display: 'flex',
+    justifyContent: 'space-between',
+    padding: '8px',
+  }
+
   return (
-    <Card>
-      <div>
-        <h1>COVID-19</h1>
-        <h2>Painel Coronavírus</h2>
-        {navigatorHasShare ? ShareButton : CopyButton}
-        <p>Atualizado em: {updatedAt}</p>
+    <Card style={style}>
+      <CardContent>
+        <Typography variant="h3" color="primary">
+          COVID-19
+        </Typography>
+        <Typography variant="h5">
+          Painel Coronavírus
+        </Typography>
+        <Typography variant="body2" color="textSecondary">
+          Atualizado em: {updatedAt}
+        </Typography>
         <Select onChange={changeCountry} value={country}>
           {COUNTRIES.map(renderCountries)}
         </Select>
-      </div>
+      </CardContent>
+      <CardContent>
+        {navigatorHasShare ? ShareButton : CopyButton}
+      </CardContent>
     </Card>
   )
 }
